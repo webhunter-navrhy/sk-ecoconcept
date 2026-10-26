@@ -3,7 +3,7 @@
 {% set cesta = '' %}
 {% block obsah %}
 
-<section class="hero">
+<section class="hero hero-tmave" style="--hero-foto:url('{{ img_url('101.jpg', 640) }}')">
   <div class="wrap hero-grid">
     <div class="hero-text">
       <p class="stitok">Základy domu · penové sklo GEOCELL®</p>
@@ -11,12 +11,6 @@
       <p class="uvod">Zakladáme rodinné domy na lôžku z penového skla s doskou z drátkobetónu. Tepelná izolácia, drenáž a únosnosť v jednej skladbe, bez tepelných mostov. Pomáhame aj majiteľom starších domov s vlhkou pivnicou a studenou podlahou.</p>
       <p class="hero-akcie"><a class="tlacitko" href="#kontakt">Cenová ponuka</a> <a class="odkaz-sip" href="#doska">Pozrieť skladbu dosky</a></p>
     </div>
-  </div>
-  <div class="wrap">
-    <figure class="velka-foto">
-      {{ img('obr-1-2-big.jpg', 'Izolovaná základová doska na penosklovom granuláte: skladba bez podpivničenia a pre podpivničené priestory', sizes='(min-width: 76rem) 1152px, 100vw', eager=True) }}
-      <figcaption>Skladba dosky bez podpivničenia (vľavo) a pre podpivničené a suterénne priestory (vpravo)</figcaption>
-    </figure>
   </div>
 </section>
 
@@ -105,12 +99,6 @@
       {{ img('podlaha-300x166.jpg', 'Penosklový granulát v zhutnenej vrstve pod novou podlahou starej budovy', sizes='300px') }}
     </div>
   </div>
-  <div class="wrap">
-    <figure class="velka-foto">
-      {{ img('obr-3-4-big.jpg', 'Sanácia podláh a základov starších domov: skladba s geoCell, hydroizoláciou a podlahou', sizes='(min-width: 76rem) 1152px, 100vw') }}
-      <figcaption>Sanácie podláh a základov starších rodinných domov a ich tepelné odizolovanie</figcaption>
-    </figure>
-  </div>
 </section>
 
 <section class="sekce svetla" id="sklo">
@@ -132,6 +120,19 @@
   </div>
 </section>
 
+<section class="sekce" id="skladby">
+  <div class="wrap">
+    <h2>Skladby z technickej dokumentácie</h2>
+    <p class="uvod-sekcie">Tri typické riešenia v reze. Čísla v obrázkoch zodpovedajú vrstvám v legende.</p>
+    {% for f, alt, cap in [('obr-1-2-big.jpg','Izolovaná základová doska na penosklovom granuláte, bez podpivničenia a pre podpivničené priestory','Základová doska na penosklovom granuláte: bez podpivničenia (vľavo) a pre podpivničené priestory (vpravo)'),('obr-3-4-big.jpg','Sanácia podláh a základov starších domov s geoCell','Sanácie podláh a základov starších rodinných domov a ich tepelné odizolovanie'),('obr-5-6-big.jpg','Ploché strechy, terasy a izolovanie podzemných priestorov s geoCell','Ploché strechy, izolovanie podzemných priestorov, terasy a priľahlé priestory')] %}
+    <figure class="velka-foto">
+      {{ img(f, alt, sizes='(min-width: 76rem) 1152px, 100vw', eager=False) }}
+      <figcaption>{{ cap }}</figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+
 <section class="sekce" id="pouzitie">
   <div class="wrap">
     <h2>Kde sa penové sklo používa</h2>
@@ -144,17 +145,13 @@
       <li>bazény, plavárne a športoviská, vyhrievané plochy</li>
       <li>únosné podložie pod parkoviská a cesty</li>
     </ul>
-    <figure class="velka-foto">
-      {{ img('obr-5-6-big.jpg', 'Konštrukcie plochých striech, izolovanie podzemných priestorov, terás a priľahlých priestorov s penosklovým granulátom', sizes='(min-width: 76rem) 1152px, 100vw') }}
-      <figcaption>Konštrukcie plochých striech a izolovanie podzemných priestorov, terás a priľahlých priestorov</figcaption>
-    </figure>
   </div>
 </section>
 
 <section class="sekce svetla" id="realizacie">
   <div class="wrap">
     <h2>Realizácie</h2>
-    <p class="uvod-sekcie">Domy, na ktorých sme pracovali. Podrobné technické údaje k jednotlivým stavbám pripravíme z Vašich podkladov.</p>
+    <p class="uvod-sekcie">Domy, na ktorých sme pracovali. Fotky a technické údaje k jednotlivým stavbám doplníme z Vašich podkladov.</p>
     <ul class="zoznam-realizacii" role="list">
       {% for r in data.realizacie %}<li><strong>{{ r.nazev }}</strong><span>{{ r.typ }}</span></li>{% endfor %}
     </ul>
