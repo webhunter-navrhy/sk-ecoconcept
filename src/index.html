@@ -1,0 +1,182 @@
+{% extends "_base.html" %}
+{% set titulek = 'ECO Concept – základová doska na penovom skle | Bratislava' %}
+{% set cesta = '' %}
+{% block obsah %}
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="stitok">Základy domu · penové sklo GEOCELL®</p>
+      <h1>Základová doska, ktorá izoluje aj nesie dom</h1>
+      <p class="uvod">Zakladáme rodinné domy na lôžku z penového skla s doskou z drátkobetónu. Tepelná izolácia, drenáž a únosnosť v jednej skladbe, bez tepelných mostov. Pomáhame aj majiteľom starších domov s vlhkou pivnicou a studenou podlahou.</p>
+      <p class="hero-akcie"><a class="tlacitko" href="#kontakt">Cenová ponuka</a> <a class="odkaz-sip" href="#doska">Pozrieť skladbu dosky</a></p>
+    </div>
+  </div>
+  <div class="wrap">
+    <figure class="velka-foto">
+      {{ img('obr-1-2-big.jpg', 'Izolovaná základová doska na penosklovom granuláte: skladba bez podpivničenia a pre podpivničené priestory', sizes='(min-width: 76rem) 1152px, 100vw', eager=True) }}
+      <figcaption>Skladba dosky bez podpivničenia (vľavo) a pre podpivničené a suterénne priestory (vpravo)</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sekce" id="doska">
+  <div class="wrap dvojstlpec">
+    <div>
+      <h2>Prečo základová doska na penovom skle</h2>
+      <p>Penové sklo sa v zhutnenom stave správa ako únosný podklad aj ako tepelná izolácia. Dosku s tým nemusíte dodatočne zatepľovať a nad vrstvou nevzniká tepelný most.</p>
+      <ul class="vyhody" role="list">
+        <li><strong>Pevnosť a stabilita.</strong> Betón Holcim a rozptýlená výstuž Dramix® od firmy Bekaert tvoria drátkobetón Steelpact®. Skladba prenesie zaťaženie až 11 ton/m².</li>
+        <li><strong>Menej prác.</strong> Izolácia, drenáž a podklad sú jedna vrstva. Šetrí sa čas aj náklady na realizáciu.</li>
+        <li><strong>Bez premŕzania.</strong> Uzavretá bunečná štruktúra neviaže vodu, vlhkosť sa odvedie a pod doskou nehrozí premrznutie.</li>
+        <li><strong>Zložitejšie podložie.</strong> Stabilita dosky môže nahradiť niektoré technológie, napríklad pilótovanie základov alebo konsolidované násypy.</li>
+      </ul>
+    </div>
+    <div class="tabulka-wrap">
+    <figure class="rez" aria-labelledby="rez-popis">
+      <svg viewBox="0 0 520 440" role="img" aria-label="Rez základovou doskou: zhora betónová doska s rozptýlenou výstužou, separačná fólia, penosklový granulát, geotextília a pôvodná zemina">
+        <defs>
+          <pattern id="zrno" width="26" height="22" patternUnits="userSpaceOnUse">
+            <rect width="26" height="22" fill="#e9e5de"/>
+            <polygon points="2,4 11,1 16,8 9,13 3,11" fill="#c9c3b8"/>
+            <polygon points="15,12 23,9 25,17 18,21 13,18" fill="#d5cfc4"/>
+            <polygon points="1,16 7,15 9,21 2,22" fill="#bdb6aa"/>
+          </pattern>
+          <pattern id="zemina" width="14" height="14" patternUnits="userSpaceOnUse">
+            <rect width="14" height="14" fill="#8a7761"/>
+            <circle cx="3" cy="4" r="1.4" fill="#6f5f4c"/><circle cx="10" cy="9" r="1.2" fill="#a2907a"/><circle cx="5" cy="12" r="1" fill="#6f5f4c"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="520" height="440" fill="#fff"/>
+        <g class="vrstva v1"><rect x="20" y="60" width="280" height="62" fill="#9d9d9a"/>
+          <g stroke="#2d2d2d" stroke-width="2" stroke-linecap="round"><path d="M40 80l10 14M64 102l12-10M92 76l8 16M118 100l14-8M150 84l9 14M178 104l12-12M206 78l10 12M236 98l14-10M266 82l8 16"/></g></g>
+        <g class="vrstva v2"><rect x="20" y="122" width="280" height="6" fill="#e0a114"/></g>
+        <g class="vrstva v3"><rect x="20" y="128" width="280" height="168" fill="url(#zrno)"/></g>
+        <g class="vrstva v4"><rect x="20" y="296" width="280" height="6" fill="#4b8a5a"/></g>
+        <g class="vrstva v5"><rect x="20" y="302" width="280" height="100" fill="url(#zemina)"/></g>
+        <rect x="20" y="60" width="280" height="342" fill="none" stroke="#1d1d1b" stroke-width="2"/>
+        <g class="popisky" font-size="15" fill="#1d1d1b">
+          <path d="M300 91h30" stroke="#9c2917" stroke-width="2"/><text x="338" y="86" font-weight="700">Betónová doska</text><text x="338" y="104">s rozptýlenou výstužou</text>
+          <path d="M300 125h30" stroke="#9c2917" stroke-width="2"/><text x="338" y="130">Separačná fólia</text>
+          <path d="M300 212h30" stroke="#9c2917" stroke-width="2"/><text x="338" y="206" font-weight="700">Penosklový granulát</text><text x="338" y="224">zhutnený, izoluje a drénuje</text>
+          <path d="M300 299h30" stroke="#9c2917" stroke-width="2"/><text x="338" y="304">Geotextília</text>
+          <path d="M300 352h30" stroke="#9c2917" stroke-width="2"/><text x="338" y="357">Pôvodná zemina</text>
+        </g>
+      </svg>
+      <figcaption id="rez-popis">Skladba izolovanej základovej dosky na penovom skle</figcaption>
+    </figure>
+      
+      <h3>Penové sklo GEOCELL® v číslach z technickej dokumentácie</h3>
+      <table class="tabulka">
+        <tbody>
+          <tr><th scope="row">Tepelná vodivosť, zhutnené za sucha</th><td>0,080 W/mK</td></tr>
+          <tr><th scope="row">Tepelná vodivosť, zhutnené za mokra</th><td>0,130 W/mK</td></tr>
+          <tr><th scope="row">Prípustné napätie v tlaku, zhutnenie 1,6 : 1</th><td>280 kN/m²</td></tr>
+          <tr><th scope="row">Pevnosť v tlaku jedného zrna</th><td>5,00 N/mm²</td></tr>
+          <tr><th scope="row">Objemová hmotnosť</th><td>150 kg/m³</td></tr>
+          <tr><th scope="row">Reakcia na oheň</th><td>trieda A1, nehorľavé</td></tr>
+          <tr><th scope="row">Základ materiálu</th><td>100 % recyklované sklo</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sekce svetla" id="sluzby">
+  <div class="wrap">
+    <h2>Čo robíme</h2>
+    <ul class="sluzby" role="list">
+      {% for s in data.sluzby %}<li><h3>{{ s.nazev }}</h3><p>{{ s.popis }}</p></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="sekce" id="sanacie">
+  <div class="wrap dvojstlpec obrazky-vpravo">
+    <div>
+      <h2>Dom už stojí a podlaha alebo pivnica robia starosti</h2>
+      <p>Technológia nie je len pre novostavby. Pri starších domoch pomáha tam, kde je podlaha studená alebo steny pivnice vlhké.</p>
+      <h3>Podlahy</h3>
+      <p>Nová podlaha je tepelne izolovaná, chránená proti vlhkosti a radónu a má malú stavebnú výšku. Krytinu možno položiť priamo, bez ďalšieho zateplenia a poteru. Sanácie sa dajú robiť po jednotlivých miestnostiach, kým dom funguje.</p>
+      <h3>Pivnice</h3>
+      <p>Pri 20 – 30 ročnom podpivničenom dome s vlhkými stenami sa výkop okolo pivnice vyloží geotextíliou a zasype zhutneným penovým sklom. Steny cez drenáž postupne vyschnú a vrstva sa postará o tepelnú izoláciu.</p>
+    </div>
+    <div class="fotky-stlpec">
+      {{ img('podlaha-300x166.jpg', 'Penosklový granulát v zhutnenej vrstve pod novou podlahou starej budovy', sizes='300px') }}
+    </div>
+  </div>
+  <div class="wrap">
+    <figure class="velka-foto">
+      {{ img('obr-3-4-big.jpg', 'Sanácia podláh a základov starších domov: skladba s geoCell, hydroizoláciou a podlahou', sizes='(min-width: 76rem) 1152px, 100vw') }}
+      <figcaption>Sanácie podláh a základov starších rodinných domov a ich tepelné odizolovanie</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sekce svetla" id="sklo">
+  <div class="wrap">
+    <h2>Zo starého skla stavebný materiál</h2>
+    <div class="vyroba">
+      <ol class="kroky" role="list">
+        <li><h3>Triedenie a drvenie</h3><p>Východiskom je použité sklo: poháre, fľaše, okenné tabule, číre aj farebné. Surovina sa triedi, čistí a drví na rovnomerné frakcie.</p></li>
+        <li><h3>Mletie a aktivátory</h3><p>Drť do 10 mm sa melie na jemnú sklenenú múčku a primiešajú sa minerálne aktivátory.</p></li>
+        <li><h3>Pec okolo 900 °C</h3><p>V elektricky vykurovanej priebežnej peci sa múčka zlieva a aktivátory ju rovnomerne napenia.</p></li>
+        <li><h3>Chladnutie a lámanie</h3><p>Platňa pri ochladzovaní vplyvom vnútorných napätí sama praská. Výsledkom je granulát s frakciou 3 – 6 cm, bez ďalšej úpravy.</p></li>
+      </ol>
+      <div class="fotky-pas">
+        {{ img('101.jpg', 'Hrudy hotového penového skla zblízka', sizes='280px') }}
+        
+      </div>
+    </div>
+    <p class="poznamka">Granulát sa expeduje priamo zo skládky na stavby, buď voľne ložený na nákladnom aute alebo vo vreciach Big Bag, ktoré uľahčujú vykládku na ťažko prístupných staveniskách.</p>
+  </div>
+</section>
+
+<section class="sekce" id="pouzitie">
+  <div class="wrap">
+    <h2>Kde sa penové sklo používa</h2>
+    <ul class="pouzitie" role="list">
+      <li>pod základové dosky rodinných, bytových, priemyselných aj obchodných budov</li>
+      <li>pod podlahy v novostavbách i v existujúcich objektoch</li>
+      <li>izolácia striech a terás, vrátane striech so zeleňou</li>
+      <li>odľahčenie preťažených stropov pamiatkových budov</li>
+      <li>postranná izolácia pivníc a podzemných garáží</li>
+      <li>bazény, plavárne a športoviská, vyhrievané plochy</li>
+      <li>únosné podložie pod parkoviská a cesty</li>
+    </ul>
+    <figure class="velka-foto">
+      {{ img('obr-5-6-big.jpg', 'Konštrukcie plochých striech, izolovanie podzemných priestorov, terás a priľahlých priestorov s penosklovým granulátom', sizes='(min-width: 76rem) 1152px, 100vw') }}
+      <figcaption>Konštrukcie plochých striech a izolovanie podzemných priestorov, terás a priľahlých priestorov</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sekce svetla" id="realizacie">
+  <div class="wrap">
+    <h2>Realizácie</h2>
+    <p class="uvod-sekcie">Domy, na ktorých sme pracovali. Podrobné technické údaje k jednotlivým stavbám pripravíme z Vašich podkladov.</p>
+    <ul class="zoznam-realizacii" role="list">
+      {% for r in data.realizacie %}<li><strong>{{ r.nazev }}</strong><span>{{ r.typ }}</span></li>{% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="sekce kontakt" id="kontakt">
+  <div class="wrap dvojstlpec">
+    <div>
+      <h2>Cenová ponuka</h2>
+      <p>Napíšte, čo staviate alebo sanujete, kde a približnú výmeru. Ozveme sa s návrhom riešenia.</p>
+      <dl class="udaje">
+        <dt>Kancelária</dt><dd>ECO Concept, s.r.o.<br>Tomášikova 26, 7. poschodie<br>821 01 Bratislava</dd>
+        <dt>Fakturačná adresa</dt><dd>Veľkomoravská 2413/29<br>901 01 Malacky</dd>
+        <dt>E-mail</dt><dd><a href="mailto:{{ site.kontakt.email }}">{{ site.kontakt.email }}</a></dd>
+        <dt>Telefón</dt><dd><a href="tel:{{ site.kontakt.telefon|replace(' ', '') }}">{{ site.kontakt.telefon }}</a></dd>
+        <dt>IČO · DIČ · IČ DPH</dt><dd>45 944 067 · 2023153649 · SK2023153649</dd>
+      </dl>
+    </div>
+    <div>
+      {% include "_formular.html" %}
+    </div>
+  </div>
+</section>
+{% endblock %}

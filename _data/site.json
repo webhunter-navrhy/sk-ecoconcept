@@ -1,0 +1,31 @@
+{
+  "slug": "sk-ecoconcept",
+  "nazev": "ECO Concept",
+  "url": "https://webhunter-navrhy.github.io/sk-ecoconcept/",
+  "base": "/sk-ecoconcept/",
+  "lang": "sk",
+  "popis": "Izolované základové dosky na penovom skle GEOCELL®, sanácie podláh a pivníc a predaj penosklového granulátu. Bratislava a Malacky.",
+  "navrh": true,
+  "domena": "",
+  "og_image": "obr-1-2-big.jpg",
+  "logo": "logo.png",
+  "theme_color": "#9c2917",
+  "typ": "LocalBusiness",
+  "ico": "45 944 067",
+  "kontakt": {
+    "email": "ecoconcept@ecoconcept.sk",
+    "telefon": "+421 905 641 532",
+    "adresa": {"ulice": "Tomášikova 26", "psc": "821 01", "mesto": "Bratislava", "zeme": "SK"}
+  },
+  "oteviraci_doba": [],
+  "sameas": [],
+  "cenove_rozpeti": "",
+  "formular": {"endpoint": "", "demo": true, "predmet": "Cenová ponuka z webu"},
+  "nav": [
+    {"text": "Základová doska", "href": "#doska"},
+    {"text": "Služby", "href": "#sluzby"},
+    {"text": "Penové sklo", "href": "#sklo"},
+    {"text": "Realizácie", "href": "#realizacie"},
+    {"text": "Cenová ponuka", "href": "#kontakt"}
+  ]
+}

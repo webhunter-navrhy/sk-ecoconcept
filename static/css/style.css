@@ -1,0 +1,169 @@
+@font-face { font-family: "Archivo"; font-weight: 300 700; font-style: normal; font-display: swap; src: url("../fonts/Archivo-300-700-latin-ext.woff2") format("woff2"); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: "Archivo"; font-weight: 300 700; font-style: normal; font-display: swap; src: url("../fonts/Archivo-300-700-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+/* Neutrální základ. ŽÁDNÝ design: barvy, fonty a layout vymysli pro konkrétního klienta. */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: clip; }
+body { margin: 0; overflow-x: clip; }
+img, picture, video, svg { display: block; max-width: 100%; height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; }
+p { margin: 0; text-wrap: pretty; }
+ul[role="list"], ol[role="list"] { list-style: none; margin: 0; padding: 0; }
+
+:root {
+  /* barvy: přepiš podle brandu klienta (brief.json -> barvy.doporucene) */
+  --bg: #fbfaf8;
+  --text: #1d1d1b;
+  --muted: #55524d;
+  --accent: #9c2917;
+  --accent-text: #ffffff;
+  --line: #d8d3ca;
+
+  /* písmo: self-host do static/fonts + @font-face s font-display: swap; vždy otestuj háčky ěščřžýáíéůú */
+  --font-body: "Archivo", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-head: var(--font-body);
+
+  /* typografická škála (320 až 1440 px) */
+  --step--1: clamp(0.83rem, 0.80rem + 0.14vw, 0.92rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.45rem);
+  --step-2: clamp(1.44rem, 1.3rem + 0.7vw, 1.9rem);
+  --step-3: clamp(1.73rem, 1.5rem + 1.2vw, 2.6rem);
+  --step-4: clamp(2.07rem, 1.7rem + 1.9vw, 3.5rem);
+  --step-5: clamp(2.5rem, 1.9rem + 3vw, 5rem);
+
+  --space-1: 0.5rem;  --space-2: 1rem;  --space-3: 1.5rem;
+  --space-4: 2.5rem;  --space-5: 4rem;  --space-6: clamp(4rem, 3rem + 5vw, 8rem);
+  --wrap: 72rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+}
+
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: var(--step-0); line-height: 1.6; }
+h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.12; font-weight: 600; }
+h1 { font-size: var(--step-5); } h2 { font-size: var(--step-3); } h3 { font-size: var(--step-1); }
+a { color: inherit; }
+:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+.wrap { width: min(100% - 2 * var(--gutter), var(--wrap)); margin-inline: auto; }
+.sekce { padding-block: var(--space-6); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip { position: absolute; left: var(--space-2); top: -4rem; background: var(--bg); padding: var(--space-1) var(--space-2); z-index: 100; }
+.skip:focus { top: var(--space-2); }
+
+/* dotykové cíle: min. 44 px (QA hlásí < 40 px) */
+.tap, button, .tlacitko, input:not([type="checkbox"]):not([type="radio"]), select, textarea { min-height: 44px; }
+.tlacitko, button[type="submit"] { display: inline-flex; align-items: center; justify-content: center; padding: 0.6em 1.4em; background: var(--accent); color: var(--accent-text); border: 0; text-decoration: none; }
+.hlavicka nav a, .paticka a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 0.25rem; }
+
+/* formulář */
+.formular { display: grid; gap: var(--space-2); max-width: 36rem; }
+.formular label { display: grid; gap: 0.25rem; font-size: var(--step--1); }
+.formular input, .formular textarea, .formular select { padding: 0.6em 0.8em; border: 1px solid var(--line); background: transparent; width: 100%; }
+.formular .past { position: absolute; left: -9999px; }
+.formular-stav { font-size: var(--step--1); min-height: 1.5em; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+
+
+/* ECO Concept */
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.01em; }
+h1 { font-size: var(--step-4); }
+h2 { margin-bottom: var(--space-3); }
+h3 { font-size: var(--step-0); margin-bottom: 0.35rem; }
+.sekce { padding-block: clamp(3rem, 2rem + 4vw, 6rem); }
+.svetla { background: #f0ece5; }
+.hlavicka { background: var(--accent); color: #fff; z-index: 50; }
+.hlavicka .wrap { padding-block: 0.75rem; display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); min-height: 4.5rem; flex-wrap: wrap; }
+.logo img { height: 40px; width: auto; }
+.hlavicka nav { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; font-size: var(--step--1); }
+.hlavicka nav a { color: #fff; text-decoration: none; font-weight: 500; }
+.hlavicka nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.hlavicka :focus-visible { outline-color: #fff; }
+
+.hero { padding-block: clamp(2.5rem, 2rem + 4vw, 5.5rem); }
+.hero-grid { display: grid; gap: var(--space-4); align-items: center; }
+.stitok { font-size: var(--step--1); font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); margin-bottom: var(--space-2); }
+.uvod { margin-top: var(--space-3); max-width: 38rem; color: var(--muted); }
+.hero-akcie { margin-top: var(--space-4); display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); align-items: center; }
+.odkaz-sip { font-weight: 600; text-underline-offset: 4px; display: inline-flex; align-items: center; min-height: 44px; }
+.tlacitko, button[type="submit"] { background: var(--accent); color: #fff; font-weight: 600; border-radius: 2px; text-decoration: none; }
+.tlacitko:hover, button[type="submit"]:hover { background: #7d200f; }
+.rez { margin: 0; }
+.rez svg { width: 100%; height: auto; border: 1px solid var(--line); background: #fff; }
+.rez figcaption { font-size: var(--step--1); color: var(--muted); margin-top: 0.5rem; }
+.rez .vrstva { transform-origin: left center; animation: vrstva 0.7s cubic-bezier(.2,.7,.2,1) both; }
+.rez .v2 { animation-delay: .12s; } .rez .v3 { animation-delay: .24s; } .rez .v4 { animation-delay: .36s; } .rez .v5 { animation-delay: .48s; }
+@keyframes vrstva { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
+
+.dvojstlpec { display: grid; gap: var(--space-4); }
+.dvojstlpec > div > p { margin-bottom: var(--space-2); max-width: 40rem; }
+.vyhody { display: grid; gap: var(--space-2); margin-top: var(--space-3) !important; }
+.vyhody li { padding-left: 1rem; border-left: 3px solid var(--accent); max-width: 40rem; }
+.tabulka { width: 100%; border-collapse: collapse; background: #fff; }
+.tabulka th, .tabulka td { text-align: left; padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--line); font-size: var(--step--1); vertical-align: top; }
+.tabulka th { font-weight: 400; color: var(--muted); }
+.tabulka td { font-weight: 700; white-space: nowrap; }
+.tabulka-wrap h3 { margin-bottom: var(--space-2); }
+
+.sluzby { display: grid; gap: var(--space-3) var(--space-4); }
+.sluzby li { border-top: 2px solid var(--text); padding-top: var(--space-2); }
+.sluzby p { color: var(--muted); font-size: var(--step--1); }
+
+.fotky-stlpec { display: grid; gap: var(--space-2); align-content: start; }
+.fotky-stlpec { grid-template-columns: repeat(2, minmax(0, 150px)); }
+.fotky-stlpec img { width: 100%; height: auto; border: 1px solid var(--line); }
+
+.vyroba { display: grid; gap: var(--space-4); }
+.kroky { display: grid; gap: var(--space-3); list-style: none; margin: 0; padding: 0; }
+.kroky li { padding-left: 1rem; border-left: 3px solid var(--accent); }
+.kroky p { color: var(--muted); font-size: var(--step--1); }
+.fotky-pas { display: grid; gap: var(--space-2); align-content: start; max-width: 280px; }
+.fotky-pas img { width: 100%; height: auto; }
+.poznamka { margin-top: var(--space-4); max-width: 44rem; color: var(--muted); }
+
+.pouzitie { columns: 1; column-gap: var(--space-5); }
+.pouzitie li { break-inside: avoid; padding: 0.55rem 0 0.55rem 1.3rem; border-bottom: 1px solid var(--line); position: relative; }
+.pouzitie li::before { content: ""; position: absolute; left: 0; top: 1.1rem; width: 0.55rem; height: 0.55rem; background: var(--accent); }
+
+.uvod-sekcie { max-width: 40rem; color: var(--muted); margin-bottom: var(--space-3); }
+.zoznam-realizacii { display: grid; gap: 0; border-top: 2px solid var(--text); }
+.zoznam-realizacii li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 1rem; padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+.zoznam-realizacii span { color: var(--muted); font-size: var(--step--1); }
+.objekt { margin: var(--space-4) 0 0; max-width: 28rem; }
+.objekt img { width: 100%; height: auto; }
+
+.udaje { display: grid; gap: 0.2rem; margin-top: var(--space-3); }
+.udaje dt { font-size: var(--step--1); color: var(--muted); margin-top: var(--space-2); }
+.udaje dd { margin: 0; }
+.udaje dd a { display: inline-flex; align-items: center; min-height: 44px; }
+.kontakt .formular input, .kontakt .formular textarea { background: #fff; }
+.paticka { background: var(--text); color: #e8e4dc; padding-block: var(--space-4); }
+.paticka .wrap { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-4); }
+
+@media (min-width: 52rem) {
+  .hlavicka { position: sticky; top: 0; }
+  .hero-grid { grid-template-columns: 1.05fr 1fr; }
+  .dvojstlpec { grid-template-columns: 1.1fr 1fr; gap: var(--space-5); }
+  .obrazky-vpravo { grid-template-columns: 1.5fr 1fr; }
+  .fotky-stlpec { grid-template-columns: minmax(0, 300px); }
+  .sluzby { grid-template-columns: repeat(3, 1fr); }
+  .vyroba { grid-template-columns: 1.6fr 1fr; }
+  .pouzitie { columns: 2; }
+  .zoznam-realizacii { grid-template-columns: 1fr 1fr; column-gap: var(--space-5); }
+}
+@media (max-width: 40rem) { .tabulka td { white-space: normal; } }
+
+.hero-foto { margin: 0; } .hero-foto img { width: 100%; height: auto; max-height: 28rem; object-fit: cover; }
+.fotky-stlpec img { width: 100%; height: auto; }
+.tabulka-wrap .rez { margin-top: var(--space-4); }
+
+.velka-foto { margin: var(--space-4) 0 0; }
+.velka-foto img { width: 100%; height: auto; border: 1px solid var(--line); background: #fff; }
+.velka-foto figcaption { font-size: 1rem; color: #333; margin-top: 0.6rem; }
+.hero { padding-bottom: clamp(1.5rem, 1rem + 2vw, 3rem); }
+.hero .velka-foto { margin-top: 0; }
+.sluzby p, .kroky p, .uvod, .uvod-sekcie, .poznamka, .zoznam-realizacii span, .tabulka th, .tabulka td, .rez figcaption { font-size: 1rem; color: #333; }
+@media (min-width: 52rem) { .sluzby p, .kroky p, .uvod, .uvod-sekcie, .poznamka { font-size: 1.0625rem; } }
+.zoznam-realizacii li { background: #fff; padding: 0.9rem 1rem; border: 1px solid var(--line); border-top: 4px solid var(--accent); flex-direction: column; }
+.zoznam-realizacii { border-top: 0; gap: var(--space-2); }
+@media (min-width: 52rem) { .zoznam-realizacii { grid-template-columns: repeat(3, 1fr); column-gap: var(--space-2); } }
