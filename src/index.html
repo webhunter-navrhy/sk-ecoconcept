@@ -85,6 +85,10 @@
   </div>
 </section>
 
+<section class="pas-foto" style="--pas-foto:url('{{ img_url('12.jpg', 640) }}')" role="img" aria-label="Penové sklo pri práci na stavbe">
+  <div class="wrap"><p>Zhutnený penosklový granulát nesie dosku, izoluje a odvádza vlhkosť.</p></div>
+</section>
+
 <section class="sekce" id="sanacie">
   <div class="wrap dvojstlpec obrazky-vpravo">
     <div>
@@ -96,7 +100,8 @@
       <p>Pri 20 – 30 ročnom podpivničenom dome s vlhkými stenami sa výkop okolo pivnice vyloží geotextíliou a zasype zhutneným penovým sklom. Steny cez drenáž postupne vyschnú a vrstva sa postará o tepelnú izoláciu.</p>
     </div>
     <div class="fotky-stlpec">
-      {{ img('podlaha-300x166.jpg', 'Penosklový granulát v zhutnenej vrstve pod novou podlahou starej budovy', sizes='300px') }}
+      {{ img('podlaha-300x166.jpg', 'Penosklový granulát v zhutnenej vrstve pod novou podlahou starej budovy', sizes='(min-width: 52rem) 40vw, 100vw') }}
+      {{ img('12.jpg', 'Pracovník meria hrudy penového skla pri stavbe', sizes='(min-width: 52rem) 40vw, 100vw') }}
     </div>
   </div>
 </section>
@@ -112,7 +117,7 @@
         <li><h3>Chladnutie a lámanie</h3><p>Platňa pri ochladzovaní vplyvom vnútorných napätí sama praská. Výsledkom je granulát s frakciou 3 – 6 cm, bez ďalšej úpravy.</p></li>
       </ol>
       <div class="fotky-pas">
-        {{ img('101.jpg', 'Hrudy hotového penového skla zblízka', sizes='280px') }}
+        {{ img('101.jpg', 'Hrudy hotového penového skla zblízka', sizes='(min-width: 52rem) 40vw, 100vw') }}
         
       </div>
     </div>
@@ -123,13 +128,24 @@
 <section class="sekce" id="skladby">
   <div class="wrap">
     <h2>Skladby z technickej dokumentácie</h2>
-    <p class="uvod-sekcie">Tri typické riešenia v reze. Čísla v obrázkoch zodpovedajú vrstvám v legende.</p>
-    {% for f, alt, cap in [('obr-1-2-big.jpg','Izolovaná základová doska na penosklovom granuláte, bez podpivničenia a pre podpivničené priestory','Základová doska na penosklovom granuláte: bez podpivničenia (vľavo) a pre podpivničené priestory (vpravo)'),('obr-3-4-big.jpg','Sanácia podláh a základov starších domov s geoCell','Sanácie podláh a základov starších rodinných domov a ich tepelné odizolovanie'),('obr-5-6-big.jpg','Ploché strechy, terasy a izolovanie podzemných priestorov s geoCell','Ploché strechy, izolovanie podzemných priestorov, terasy a priľahlé priestory')] %}
-    <figure class="velka-foto">
-      {{ img(f, alt, sizes='(min-width: 76rem) 1152px, 100vw', eager=False) }}
-      <figcaption>{{ cap }}</figcaption>
-    </figure>
-    {% endfor %}
+    <p class="uvod-sekcie">Typické riešenie v reze. Čísla v obrázkoch zodpovedajú vrstvám v legende pod nimi.</p>
+    <div class="rezy">
+      <figure class="velka-foto">
+        {{ img('rez-a.jpg', 'Základová doska na penosklovom granuláte bez podpivničenia', sizes='(min-width: 52rem) 560px, 100vw', eager=False) }}
+        <figcaption>Bez podpivničenia</figcaption>
+        <ol class="legenda"><li>únosné podložie</li><li>geotextília minimálne 150 gr/m²</li><li>zhutnená vrstva geoCell® – sklopenový granulát</li><li>drenáž po obvode vrstvy penosklového granulátu</li><li>separačná fólia</li><li>betónová základová doska s rozptýlenou výstužou</li><li>Pernisul®</li><li>geoCell® – zásyp bočnej hrany dosky</li><li>izolácia pod podlahou s podlahovým kúrením</li><li>parketová podlaha</li></ol>
+      </figure>
+      <figure class="velka-foto">
+        {{ img('rez-b.jpg', 'Základová doska na penosklovom granuláte pre podpivničené a suterénne priestory', sizes='(min-width: 52rem) 560px, 100vw', eager=False) }}
+        <figcaption>Pre podpivničené a suterénne priestory</figcaption>
+        <ol class="legenda"><li>únosné podložie</li><li>geotextília minimálne 150 gr/m²</li><li>zhutnená vrstva geoCell® – sklopenový granulát</li><li>drenáž po obvode vrstvy penosklového granulátu</li><li>hydroizolačná fólia</li><li>betónová základová doska s rozptýlenou výstužou</li><li>Pernisul®</li><li>geoCell® – zásyp bočnej hrany pod úrovňou terénu</li><li>podlaha – dlažba</li></ol>
+      </figure>
+    </div>
+    <details class="dalsie">
+      <summary>Ďalšie skladby: sanácie, strechy a terasy</summary>
+      <figure class="velka-foto">{{ img('obr-3-4-big.jpg', 'Sanácia podláh a základov starších domov s geoCell', sizes='(min-width: 76rem) 1152px, 100vw', eager=False) }}<figcaption>Sanácie podláh a základov starších rodinných domov a ich tepelné odizolovanie</figcaption></figure>
+      <figure class="velka-foto">{{ img('obr-5-6-big.jpg', 'Ploché strechy, terasy a izolovanie podzemných priestorov s geoCell', sizes='(min-width: 76rem) 1152px, 100vw', eager=False) }}<figcaption>Ploché strechy, izolovanie podzemných priestorov, terasy a priľahlé priestory</figcaption></figure>
+    </details>
   </div>
 </section>
 

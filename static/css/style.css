@@ -173,3 +173,22 @@ h3 { font-size: var(--step-0); margin-bottom: 0.35rem; }
 .hero-tmave .tlacitko { background: #c4361f; }
 .hero-tmave :focus-visible { outline-color: #fff; }
 .hero-grid { grid-template-columns: 1fr !important; }
+
+/* opravné kolo */
+.fotky-stlpec, .obrazky-vpravo .fotky-stlpec { grid-template-columns: 1fr !important; }
+.fotky-stlpec img { max-width: 100%; }
+.fotky-pas { max-width: none; }
+.pas-foto { background: linear-gradient(rgba(20,18,16,.55), rgba(20,18,16,.65)), var(--pas-foto) center 30%/cover; color: #fff; padding-block: clamp(5rem, 4rem + 8vw, 11rem); }
+.pas-foto p { font-size: var(--step-3); font-weight: 700; max-width: 26ch; line-height: 1.2; }
+.rezy { display: grid; gap: var(--space-4); }
+.rezy .velka-foto { margin: 0; }
+.legenda { margin: 0.8rem 0 0; padding-left: 1.4rem; font-size: 1rem; color: #333; display: grid; gap: 0.2rem; }
+.dalsie { margin-top: var(--space-4); }
+.dalsie summary { display: inline-flex; align-items: center; min-height: 44px; padding: 0.5em 1.2em; border: 2px solid var(--accent); font-weight: 600; cursor: pointer; }
+@media (min-width: 52rem) {
+  .rezy { grid-template-columns: 1fr 1fr; }
+  .vyroba { grid-template-columns: 1fr 1fr; }
+  .obrazky-vpravo { grid-template-columns: 1fr 1fr; }
+  .sluzby p, .kroky p, .uvod, .uvod-sekcie, .poznamka, .tabulka th, .tabulka td, .legenda { font-size: 1.125rem; }
+  body { font-size: 1.1875rem; }
+}
