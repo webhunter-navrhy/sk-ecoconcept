@@ -192,3 +192,4 @@ h3 { font-size: var(--step-0); margin-bottom: 0.35rem; }
   .sluzby p, .kroky p, .uvod, .uvod-sekcie, .poznamka, .tabulka th, .tabulka td, .legenda { font-size: 1.125rem; }
   body { font-size: 1.1875rem; }
 }
+.fotky-stlpec img[src*="podlaha"] { max-width: 390px; }
